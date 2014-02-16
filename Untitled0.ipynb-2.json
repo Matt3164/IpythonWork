@@ -1,0 +1,253 @@
+{
+ "metadata": {
+  "name": "Untitled0"
+ },
+ "nbformat": 3,
+ "nbformat_minor": 0,
+ "worksheets": [
+  {
+   "cells": [
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "pwd",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 1,
+       "text": "u'/Users/matthieulegoff'"
+      }
+     ],
+     "prompt_number": 1
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "cd Documents/WorkSpace/Python\n",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "/Users/matthieulegoff/Documents/WorkSpace/Python\n"
+      }
+     ],
+     "prompt_number": 1
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "import csv as csv\nm = open('data/letter.data')\nn = open('data/letter.names.txt')",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 5
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "data = csv.reader(n, delimiter = '\\t')\ntable = [row for row in data]",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 10
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "data2 = csv.reader(m, delimiter = '\\t')\ntable2=[row for row in data2]",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 17
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "label = [row[1] for row in table2]\nnextid = [int(row[2]) for row in table2]\nidletter = [int(row[0]) for row in table2]\n",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 48
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "print table",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "[['id'], ['letter'], ['next_id'], ['word_id'], ['position'], ['fold'], ['p_0_0'], ['p_0_1'], ['p_0_2'], ['p_0_3'], ['p_0_4'], ['p_0_5'], ['p_0_6'], ['p_0_7'], ['p_1_0'], ['p_1_1'], ['p_1_2'], ['p_1_3'], ['p_1_4'], ['p_1_5'], ['p_1_6'], ['p_1_7'], ['p_2_0'], ['p_2_1'], ['p_2_2'], ['p_2_3'], ['p_2_4'], ['p_2_5'], ['p_2_6'], ['p_2_7'], ['p_3_0'], ['p_3_1'], ['p_3_2'], ['p_3_3'], ['p_3_4'], ['p_3_5'], ['p_3_6'], ['p_3_7'], ['p_4_0'], ['p_4_1'], ['p_4_2'], ['p_4_3'], ['p_4_4'], ['p_4_5'], ['p_4_6'], ['p_4_7'], ['p_5_0'], ['p_5_1'], ['p_5_2'], ['p_5_3'], ['p_5_4'], ['p_5_5'], ['p_5_6'], ['p_5_7'], ['p_6_0'], ['p_6_1'], ['p_6_2'], ['p_6_3'], ['p_6_4'], ['p_6_5'], ['p_6_6'], ['p_6_7'], ['p_7_0'], ['p_7_1'], ['p_7_2'], ['p_7_3'], ['p_7_4'], ['p_7_5'], ['p_7_6'], ['p_7_7'], ['p_8_0'], ['p_8_1'], ['p_8_2'], ['p_8_3'], ['p_8_4'], ['p_8_5'], ['p_8_6'], ['p_8_7'], ['p_9_0'], ['p_9_1'], ['p_9_2'], ['p_9_3'], ['p_9_4'], ['p_9_5'], ['p_9_6'], ['p_9_7'], ['p_10_0'], ['p_10_1'], ['p_10_2'], ['p_10_3'], ['p_10_4'], ['p_10_5'], ['p_10_6'], ['p_10_7'], ['p_11_0'], ['p_11_1'], ['p_11_2'], ['p_11_3'], ['p_11_4'], ['p_11_5'], ['p_11_6'], ['p_11_7'], ['p_12_0'], ['p_12_1'], ['p_12_2'], ['p_12_3'], ['p_12_4'], ['p_12_5'], ['p_12_6'], ['p_12_7'], ['p_13_0'], ['p_13_1'], ['p_13_2'], ['p_13_3'], ['p_13_4'], ['p_13_5'], ['p_13_6'], ['p_13_7'], ['p_14_0'], ['p_14_1'], ['p_14_2'], ['p_14_3'], ['p_14_4'], ['p_14_5'], ['p_14_6'], ['p_14_7'], ['p_15_0'], ['p_15_1'], ['p_15_2'], ['p_15_3'], ['p_15_4'], ['p_15_5'], ['p_15_6'], ['p_15_7']]\n"
+      }
+     ],
+     "prompt_number": 29
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "for i in range(0,11111):\n    print label[i],\n    if nextid[i] == -1:\n        print '\\n'\n    \n        ",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "o m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\no m m a n d i n g \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b"
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": " r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\nm b r a c e s \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\no l c a n i c \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn "
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\nn c o m f o r t a b l y \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\ne v v i n g \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\nu z z l e m e n t \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n "
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\ne n u \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\np p r o a c h i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i"
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": " n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\nn n o u n c i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\ne j u v e n a t i n g \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na n q u i s h \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x"
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": " i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\na x i \n\n"
+      }
+     ],
+     "prompt_number": 51
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "pixelmatrix = [row[6:-1] for row in table2]",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 74
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "int(pixelmatrix[1][1])",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 75,
+       "text": "0"
+      }
+     ],
+     "prompt_number": 75
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "elp = [[int(elmt) for elmt in row] for row in pixelmatrix]\n",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 80
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "print elp[1]",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]\n"
+      }
+     ],
+     "prompt_number": 81
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "from scipy import misc as ms",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 83
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "test = array(elp)",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 101
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "print test",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "[[0 0 0 ..., 0 0 0]\n [0 0 0 ..., 0 0 0]\n [0 0 0 ..., 0 0 0]\n ..., \n [0 0 1 ..., 1 0 0]\n [0 0 0 ..., 0 0 0]\n [0 1 1 ..., 1 1 0]]\n0\n"
+      }
+     ],
+     "prompt_number": 103
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "import matplotlib.pyplot as plt\nlamb = 0.01",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 99
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "dot(test, test.transpose()) + lamb * eye\n",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": "*"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "print test.size()",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": "*"
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "",
+     "language": "python",
+     "metadata": {},
+     "outputs": []
+    }
+   ],
+   "metadata": {}
+  }
+ ]
+}
