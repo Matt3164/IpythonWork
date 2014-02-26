@@ -181,6 +181,159 @@
     {
      "cell_type": "code",
      "collapsed": false,
+     "input": "from scipy import misc as ms",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 83
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "test = array(elp[:50])",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 122
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "print test",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "[[0 0 0 ..., 0 0 0]\n [0 0 0 ..., 0 0 0]\n [0 0 0 ..., 0 0 0]\n ..., \n [0 0 0 ..., 0 0 0]\n [0 0 0 ..., 0 0 0]\n [0 0 0 ..., 0 0 0]]\n"
+      }
+     ],
+     "prompt_number": 123
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "import matplotlib.pyplot as plt\nlamb = 0.01",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 124
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "mat = dot(test, test.transpose()) + lamb * eye(50)\nprint inv(mat)\n",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "[[ 0.14461182  0.00274653  0.01129748 ..., -0.00765306 -0.00263058\n   0.0233349 ]\n [ 0.00274653  0.46231429 -0.0117651  ..., -0.12104522  0.05895536\n   0.01160859]\n [ 0.01129748 -0.0117651   0.61937642 ..., -0.08276919 -0.04580667\n   0.04607008]\n ..., \n [-0.00765306 -0.12104522 -0.08276919 ...,  0.33428255 -0.00574596\n   0.04482069]\n [-0.00263058  0.05895536 -0.04580667 ..., -0.00574596  0.16403902\n  -0.03569728]\n [ 0.0233349   0.01160859  0.04607008 ...,  0.04482069 -0.03569728\n   0.23290118]]\n"
+      }
+     ],
+     "prompt_number": 126
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "test2 = label[:50]",
+     "language": "python",
+     "metadata": {},
+     "outputs": [],
+     "prompt_number": 127
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "uniques = set(test2)\nprint uniques\nlistFreq = [(item, test2.count(item)) for item in uniques]\nprint listFreq",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "set(['a', 'd', 'g', 'i', 'm', 'o', 'n'])\n[('a', 6), ('d', 5), ('g', 5), ('i', 5), ('m', 12), ('o', 6), ('n', 11)]\n"
+      }
+     ],
+     "prompt_number": 128
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "labela = [(int(elmt=='a')-0.5)*2 for elmt in test2]\nprint labela\n",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "ename": "AttributeError",
+       "evalue": "'list' object has no attribute 'shape'",
+       "output_type": "pyerr",
+       "traceback": [
+        "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m\n\u001b[0;31mAttributeError\u001b[0m                            Traceback (most recent call last)",
+        "\u001b[0;32m<ipython-input-139-e5195baa2de7>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m()\u001b[0m\n\u001b[1;32m      1\u001b[0m \u001b[0mlabela\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m[\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mint\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0melmt\u001b[0m\u001b[0;34m==\u001b[0m\u001b[0;34m'a'\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m-\u001b[0m\u001b[0;36m0.5\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m*\u001b[0m\u001b[0;36m2\u001b[0m \u001b[0;32mfor\u001b[0m \u001b[0melmt\u001b[0m \u001b[0;32min\u001b[0m \u001b[0mtest2\u001b[0m\u001b[0;34m]\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m      2\u001b[0m \u001b[0;32mprint\u001b[0m \u001b[0mlabela\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m----> 3\u001b[0;31m \u001b[0;32mprint\u001b[0m \u001b[0mlabela\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mshape\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+        "\u001b[0;31mAttributeError\u001b[0m: 'list' object has no attribute 'shape'"
+       ]
+      },
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "[-1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0]\n"
+      }
+     ],
+     "prompt_number": 139
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "alpha = array(labela)\nalpha.reshape(50,1)",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 143,
+       "text": "array([[-1.],\n       [-1.],\n       [-1.],\n       [ 1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [ 1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [ 1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [ 1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [ 1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [-1.],\n       [ 1.],\n       [-1.]])"
+      }
+     ],
+     "prompt_number": 143
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "ne = dot(mat, alpha)\nne = dot(test.transpose(), ne)\nprint ne\nprint ne.shape",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "output_type": "stream",
+       "stream": "stdout",
+       "text": "[  -467.02   -806.03   -806.03  -1584.06  -1222.06   -574.04   -749.02\n      0.     -721.03   -934.03   -335.01  -1870.06   -693.02   -845.04\n  -1324.04   -987.03  -1478.05  -1361.03  -2478.07  -2578.07  -1689.04\n  -1036.04   -577.02   -747.02  -2471.07  -2759.07  -3825.1   -4008.1\n  -2836.07  -2194.06  -1155.03   -747.02  -4466.11  -3595.06  -5854.11\n  -6047.12  -7049.13  -6758.12  -4005.09  -2620.07  -6604.14  -4970.07\n  -5966.1   -5247.07  -7320.15  -8201.13  -6178.1   -3399.07 -10056.22\n  -8837.14  -7495.17  -5502.13  -5385.15  -7115.14  -7839.15  -4604.1\n -12627.22  -6790.12  -5776.15  -5156.12  -3984.08  -6135.12  -9078.18\n  -7121.15 -12955.23  -5072.14  -6806.16  -6634.13  -4179.07  -4155.04\n  -8509.18  -8600.23 -13261.24  -5278.12  -4474.07  -4353.13  -3015.03\n  -1610.97  -7284.11 -11781.3  -11300.19  -4063.08  -4070.1   -2740.05\n  -2700.01  -2083.02  -4879.04  -8885.19  -9698.17  -5121.06  -2295.02\n  -2409.02  -2253.05  -3055.08  -2892.04  -6688.1   -6326.14  -2562.04\n  -1040.04  -1977.07  -2837.08  -2024.05  -1264.04  -2765.06  -2939.08\n  -2080.05  -1605.06  -2201.08  -2170.08   -254.01  -1187.04  -1950.06\n  -2190.06  -1760.05  -2115.08  -1657.05  -1447.06  -1184.04   -930.03\n  -1615.05   -666.02   -666.02  -1114.05  -1659.05   -790.04   -961.04\n   -740.03   -740.03]\n(128,)\n"
+      }
+     ],
+     "prompt_number": 148
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
+     "input": "",
+     "language": "python",
+     "metadata": {},
+     "outputs": [
+      {
+       "metadata": {},
+       "output_type": "pyout",
+       "prompt_number": 149,
+       "text": "array([False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False, False, False, False, False, False, False, False,\n       False, False], dtype=bool)"
+      }
+     ],
+     "prompt_number": 149
+    },
+    {
+     "cell_type": "code",
+     "collapsed": false,
      "input": "",
      "language": "python",
      "metadata": {},
